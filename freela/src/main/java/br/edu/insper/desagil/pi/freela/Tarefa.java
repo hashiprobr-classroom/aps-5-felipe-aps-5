@@ -7,7 +7,7 @@ public class Tarefa {
     private Momento inicio;
     private Momento fim;
 
-    public Tarefa(int id, String descricao, Momento inicio, Momento fim) {
+    public Tarefa(int id) {
         this.id = id;
         this.descricao = "";
         this.inicio = null;

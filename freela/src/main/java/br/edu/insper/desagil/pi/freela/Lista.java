@@ -7,7 +7,7 @@ public class Lista {
 
     private List<Tarefa> tarefas;
 
-    public Lista(List<Tarefa> tarefas) {
+    public Lista() {
         this.tarefas = new ArrayList<>();
     }
 

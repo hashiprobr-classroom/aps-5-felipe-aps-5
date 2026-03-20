@@ -1,6 +1,5 @@
 package br.edu.insper.desagil.pi.freela;
 
-import java.util.Map;
 
 public class DataHorario extends Momento {
 
@@ -8,7 +7,7 @@ public class DataHorario extends Momento {
     private int minuto;
     private Data data;
 
-    public DataHorario(int hora, int minuto, Data data) {
+    public DataHorario(Data data) {
         this.hora = 0;
         this.minuto = 0;
         this.data = data;

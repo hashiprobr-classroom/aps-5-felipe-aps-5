@@ -10,7 +10,7 @@ public class Data extends Momento {
     private int dia;
     private Map<Integer, Integer> limite;
 
-    public Data(int ano, int mes, int dia) {
+    public Data() {
         this.ano = 1970;
         this.mes = 1;
         this.dia = 1;
@@ -36,20 +36,21 @@ public class Data extends Momento {
 
     public int getDia() {return dia;}
 
-    public void autaliza(int novoAno, int novoMes , int novoDia){
+    public void atualiza(int novoAno, int novoMes , int novoDia){
         this.ano = ajusta(1970, 2070, novoAno);
         this.mes = ajusta(1, 12, novoMes );
-        this.ano = ajusta(1, limite.get(novoMes), novoDia);
+        //uso limite.get(this.mes) em vez de limite.get(novoMes) pq se novoMes esta fora de 1-12, ele n consegue retornar o num de dias
+        this.dia = ajusta(1, limite.get(this.mes), novoDia);
     }
 
     @Override
     public int minutos() {
         int dias = 0;
         dias += (ano-1970)*365;
-        for (int i=1; i<=12;i++){
+        for (int i=1; i<mes;i++){
             dias += limite.get(i);
         }
-        dias = dia -1;
+        dias += dia -1;
         return dias *24 *60;
 
     }
