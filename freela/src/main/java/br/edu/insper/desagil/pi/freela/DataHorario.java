@@ -1,6 +1,5 @@
 package br.edu.insper.desagil.pi.freela;
 
-
 public class DataHorario extends Momento {
 
     private int hora;

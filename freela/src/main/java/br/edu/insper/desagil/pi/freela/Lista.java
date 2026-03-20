@@ -13,12 +13,13 @@ public class Lista {
 
     public List<Tarefa> getTarefas() {return tarefas;}
 
-    public void adiciona(Tarefa tarefa){
-        for ( Tarefa t : tarefas){
-            if (tarefa.getId()!=t.getId()){
-                tarefas.add(tarefa);
+    public void adiciona(Tarefa tarefa) {
+        for (Tarefa t : tarefas) {
+            if (tarefa.getId() == t.getId()) {
+                return; // já existe, não adiciona
             }
         }
+        tarefas.add(tarefa); // só adiciona se não encontrou duplicata
     }
 
 }
